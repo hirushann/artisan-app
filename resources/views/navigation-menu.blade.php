@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
     <div class="max-w-[98%] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-end h-16">
+        <div class="flex justify-between py-6">
             {{-- <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
@@ -17,6 +17,10 @@
                     </x-nav-link>
                 </div>
             </div> --}}
+
+            <div class="flex items-center">
+               <h2 class="text-lg font-semibold"> Welcome Back {{ Auth::user()->name }} 👋🏻 </h2>
+            </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <!-- Teams Dropdown -->
