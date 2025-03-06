@@ -1,6 +1,6 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-[98%] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-full mx-auto">
         <div class="flex justify-between py-6">
             {{-- <div class="flex">
                 <!-- Logo -->
@@ -18,11 +18,11 @@
                 </div>
             </div> --}}
 
-            <div class="flex items-center">
-               <h2 class="text-lg font-semibold"> Welcome Back {{ Auth::user()->name }} 👋🏻 </h2>
+            <div class="flex items-center w-full justify-center">
+               <h2 class="text-lg font-semibold text-center"> Welcome back <span class="text-lg font-semibold text-orange-400 dark:text-slate-300">{{ Auth::user()->first_name }}</span> 👋🏻 </h2>
             </div>
 
-            <div class="hidden sm:flex sm:items-center sm:ms-6">
+            <div class="hidden sm:flex sm:items-center sm:ms-6 w-[15%]">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ms-3 relative">

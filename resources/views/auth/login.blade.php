@@ -21,7 +21,7 @@
 
             <div>
                 <x-label for="email" value="{{ __('Email') }}" />
-                <x-input placeholder="Your email address" id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                <x-input placeholder="Your email address" id="email" class="block mt-1 w-full rounded-2xl" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             </div>
 
             <div class="mt-6">
@@ -34,7 +34,7 @@
                     @endif
                 </div>
 
-                <x-input placeholder="Your password" id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                <x-input placeholder="Your password" id="password" class="block mt-1 w-full rounded-2xl" type="password" name="password" required autocomplete="current-password" />
             </div>
 
             <div class="block mt-6">
@@ -45,7 +45,7 @@
             </div>
 
             <div class="flex items-center justify-center mt-4 w-full">
-                <x-button class="w-full flex justify-center text-center">
+                <x-button class="w-full flex justify-center text-center rounded-2xl py-3">
                     {{ __('Log in') }}
                 </x-button>
             </div>
