@@ -1,6 +1,6 @@
 <div>
     <div class="py-8 px-4 mx-auto lg:py-16" x-data="{mainType: 'personal', subType: ''}">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
             <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200"
                 aria-labelledby="dropdownHelperRadioButton">
                 <li>
@@ -53,6 +53,9 @@
                             </label>
                         </div>
                     </div>
+                </li>
+                <li>
+                    @error('mainPurpose') <span class="error">{{ $message }}</span>@enderror
                 </li>
             </ul>
 
@@ -291,42 +294,31 @@
         } }">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mt-10 items-center">
                 <div class="relative">
-                    <h2 class="text-8xl text-center font-black mb-8">Options</h2>
+                    <h2 class="text-7xl text-center font-black mb-8">Options</h2>
                     <div class="relative flex py-5 items-center">
                         <div class="flex-grow border-t border-gray-400"></div>
                         <span class="flex-shrink mx-4 text-2xl font-black text-orange-400">with</span>
                         <div class="flex-grow border-t border-gray-400"></div>
                     </div>
                     <h2 class="text-5xl text-center font-black mt-8">Pros & Cons</h2>
-
-                    <button type="button"
-                        class="btn btn-secondary bg-orange-400 hover:bg-orange-500 hover:shadow text-white rounded-lg px-5 py-2 mt-12 fixed bottom-2"
-                        x-on:click="addItem()">Add Option</button>
                 </div>
                 <div
                     class="md:col-span-3 flex flex-col gap-4 border dark:border-gray-600 border-gray-300 shadow rounded-3xl p-5">
                     <div>
-                        <h3
-                            class="mb-5 text-3xl mt-5 text-center capitalize font-medium text-gray-400 dark:text-gray-300">
-                            Let's get down to the
-                            available options?</h3>
+                        <h3 class="mb-5 text-3xl mt-5 text-center text-gray-500 font-bold dark:text-gray-300">Let's get down to the available options?</h3>
+                        @error('options') <span class="error">{{ $message }}</span> @enderror
                         <div>
                             <template x-for="(item, index) in items" x-bind:key="index">
                                 <div class="mb-5 relative">
                                     <div class="relative flex py-5 items-center">
-                                        {{-- <div class="flex-grow border-t border-gray-400"></div> --}}
-                                        <span class="flex-shrink mr-4 text-2xl font-black text-orange-400">Option .<span
-                                                x-text="index + 1" class="text-slate-400 dark:text-white"></span></span>
-                                        <div class="flex-grow border-t border-gray-400">
-
-                                        </div>
-                                        <x-mini-button x-show="items.length > 2" rounded icon="trash"
-                                            x-on:click="items.splice(index, 1)" flat negative interaction="negative" />
+                                        <span class="flex-shrink mr-4 text-2xl font-black text-orange-400">Option .<span x-text="index + 1" class="text-slate-500 font-bold dark:text-white"></span></span>
+                                        <div class="flex-grow border-t border-gray-400"></div>
+                                        <x-mini-button x-show="items.length > 2" rounded icon="trash" x-on:click="items.splice(index, 1)" flat negative interaction="negative" />
                                     </div>
 
                                     <div class="input-group mb-5 flex gap-3">
                                         <input type="text" x-model="item.option"
-                                            class="bg-white dark:bg-slate-700 dark:text-gray-400 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                                            class="bg-white dark:bg-slate-700 dark:text-gray-400 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-400 focus:border-orange-400 block w-full p-2.5"
                                             placeholder="Enter an option" x-bind:name="'options[' + index + ']'">
                                     </div>
 
@@ -335,13 +327,13 @@
                                         <div class="w-full flex flex-col gap-3">
                                             <h4 class="text-base font-medium text-gray-900 dark:text-gray-400">Pros</h4>
                                             <textarea rows="4" x-model="item.pros"
-                                                class="block p-2.5 w-full text-sm text-gray-900 bg-white dark:bg-slate-700 dark:text-gray-400 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+                                                class="block p-2.5 w-full text-sm text-gray-900 bg-white dark:bg-slate-700 dark:text-gray-400 rounded-lg border border-gray-300 focus:ring-orange-400 focus:border-orange-400"
                                                 placeholder="Enter pros" x-bind:name="'pros[' + index + ']'"></textarea>
                                         </div>
                                         <div class="w-full flex flex-col gap-3">
                                             <h4 class="text-base font-medium text-gray-900 dark:text-gray-400">Cons</h4>
                                             <textarea rows="4" x-model="item.cons"
-                                                class="block p-2.5 w-full text-sm text-gray-900 bg-white dark:bg-slate-700 dark:text-gray-400 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+                                                class="block p-2.5 w-full text-sm text-gray-900 bg-white dark:bg-slate-700 dark:text-gray-400 rounded-lg border border-gray-300 focus:ring-orange-400 focus:border-orange-400"
                                                 placeholder="Enter cons" x-bind:name="'cons[' + index + ']'"></textarea>
                                         </div>
                                     </div>
@@ -349,9 +341,20 @@
                                 </div>
                             </template>
 
-                            <!-- Add Button -->
-                            <x-button info label="Let AI to make the decision.." wire:click="saveForm" class="w-full" />
+                            <!-- Submit Button -->
+                            <div class="flex flex-col gap-3 my-5">
+                                <x-radio id="detailed-report" rounded="base" xl label="Detailed Report" wire:model="reportType" value="detailed" />
+                                <x-radio id="summarized-report" rounded="base" xl label="Summarized Report" wire:model="reportType" value="summary" />
+                            </div>
 
+
+                            <div class="flex gap-3">
+                                <x-button info label="Let AI to make the decision.." lg wire:click="saveForm" rounded="lg" class="w-full" />
+                                <x-button rounded="lg" warning label="Add Option" lg x-on:click="addItem()" class="w-full"/>
+
+                                {{-- <button type="button" class="btn btn-secondary w-full bg-orange-400 hover:bg-orange-500 hover:shadow text-white rounded-lg px-5" x-on:click="addItem()">Add Option</button> --}}
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
