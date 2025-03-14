@@ -18,11 +18,11 @@
         @livewireStyles
     </head>
     <body>
-        <div class="font-sans text-gray-900 dark:text-gray-100 antialiased flex">
-            <div class="slot-section w-[60%]">
+        <div class="">
+            <div class="w-full">
                 {{ $slot }}
             </div>
-            <div class="side-image-section w-[40%] bg-center bg-no-repeat bg-cover" style="background-image: url('{{ asset('img/loginbg.jpg')}}');"></div>
+            {{-- <div class="side-image-section w-[40%] bg-center bg-no-repeat bg-cover" style="background-image: url('{{ asset('img/loginbg.jpg')}}');"></div> --}}
         </div>
 
         @livewireScripts
