@@ -84,7 +84,7 @@ export default {
             },
             borderRadius: {
                 lg: '8px',
-                md: 'calc(var(--radius) - 2px)',
+                md: '6px',
                 sm: 'calc(var(--radius) - 4px)'
             },
             fontFamily: {
