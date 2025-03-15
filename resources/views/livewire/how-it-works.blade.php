@@ -16,7 +16,7 @@
                     <div class="relative z-10">
                         <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm h-full flex flex-col items-center text-center">
                             <div class="w-20 h-20 rounded-full bg-decisioner-light-orange/50 flex items-center justify-center mb-4">
-                                <x-lucide-{{ $step['icon'] }} class="w-10 h-10 text-decisioner-orange" />
+                                {!! $step['icon'] !!}
                             </div>
                             <span class="bg-decisioner-orange text-white text-sm font-medium px-3 py-1 rounded-full mb-4">
                                 Step {{ $index + 1 }}

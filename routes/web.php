@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Pages\About;
 use App\Livewire\Pages\Features;
 use App\Livewire\Pages\Pricing;
+use App\Livewire\Pages\Contact;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,3 +23,4 @@ Route::middleware([
 Route::get('/about', About::class)->name('about');
 Route::get('/features', Features::class)->name('features');
 Route::get('/pricing', Pricing::class)->name('pricing');
+Route::get('/contact', Contact::class)->name('contact');

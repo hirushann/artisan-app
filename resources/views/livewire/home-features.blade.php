@@ -11,7 +11,7 @@
             @foreach ($features as $feature)
                 <div class="feature-card-gradient p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow group">
                     <div class="w-12 h-12 rounded-full bg-decisioner-light-orange flex items-center justify-center mb-4">
-                        <x-lucide-{{ $feature['icon'] }} class="w-6 h-6 text-decisioner-orange" />
+                        {!! $feature['icon'] !!}
                     </div>
                     <h3 class="text-xl font-semibold mb-2 group-hover:text-decisioner-orange transition-colors">
                         {{ $feature['title'] }}
