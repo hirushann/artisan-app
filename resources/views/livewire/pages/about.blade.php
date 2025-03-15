@@ -1,5 +1,5 @@
 <div class="min-h-screen">
-    <livewire:websiteNav />
+    
 
     <main>
         <!-- Hero Section -->
@@ -74,5 +74,5 @@
         </section>
     </main>
 
-    <livewire:footer />
+    
 </div>

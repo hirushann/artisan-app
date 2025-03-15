@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto flex justify-between items-center">
         <!-- Logo -->
         <div class="flex items-center">
-            <a href="" class="flex items-center">
+            <a href="{{ route('welcome') }}" class="flex items-center">
                 <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-decisioner-orange to-orange-500">
                     Decisioner
                 </span>
@@ -11,19 +11,19 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
-            <a href="" class="text-decisioner-charcoal font-medium hover:text-decisioner-orange transition-colors">
+            <a href="{{ route('welcome') }}" class="text-decisioner-charcoal font-medium hover:text-decisioner-orange transition-colors">
                 Home
             </a>
-            <a href="" class="text-decisioner-charcoal font-medium hover:text-decisioner-orange transition-colors">
+            <a href="{{ route('features') }}" class="text-decisioner-charcoal font-medium hover:text-decisioner-orange transition-colors">
                 Features
             </a>
-            <a href="" class="text-decisioner-charcoal font-medium hover:text-decisioner-orange transition-colors">
+            <a href="{{ route('pricing') }}" class="text-decisioner-charcoal font-medium hover:text-decisioner-orange transition-colors">
                 Pricing
             </a>
-            <a href="" class="text-decisioner-charcoal font-medium hover:text-decisioner-orange transition-colors">
+            <a href="{{ route('about') }}" class="text-decisioner-charcoal font-medium hover:text-decisioner-orange transition-colors">
                 About
             </a>
-            <a href="" class="font-medium text-decisioner-orange hover:text-orange-700 flex items-center gap-1">
+            <a href="{{ route('login') }}" class="font-medium text-decisioner-orange hover:text-orange-700 flex items-center gap-1">
                 Sign in
                 <svg class="w-5 h-5 fill-decisioner-orange" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"/></svg>
             </a>

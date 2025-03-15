@@ -2,10 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Pages\About;
+use App\Livewire\Pages\Features;
+use App\Livewire\Pages\Pricing;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');;
 
 Route::middleware([
     'auth:sanctum',
@@ -18,3 +20,5 @@ Route::middleware([
 });
 
 Route::get('/about', About::class)->name('about');
+Route::get('/features', Features::class)->name('features');
+Route::get('/pricing', Pricing::class)->name('pricing');
