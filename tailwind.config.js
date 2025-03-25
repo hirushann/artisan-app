@@ -83,8 +83,8 @@ export default {
                 }
             },
             borderRadius: {
-                lg: 'var(--radius)',
-                md: 'calc(var(--radius) - 2px)',
+                lg: '8px',
+                md: '6px',
                 sm: 'calc(var(--radius) - 4px)'
             },
             fontFamily: {

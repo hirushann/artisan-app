@@ -20,11 +20,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="flex flex-col items-center text-center p-6 hover:bg-decisioner-light-gray/30 rounded-xl transition-colors">
                         <div class="w-16 h-16 bg-decisioner-light-orange rounded-full flex items-center justify-center mb-4">
-                            <!-- Brain SVG Icon -->
-                            <svg class="w-8 h-8 text-decisioner-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M9 12h6"></path>
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain h-8 w-8 text-decisioner-orange"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"></path><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"></path><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"></path><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path><path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path><path d="M19.938 10.5a4 4 0 0 1 .585.396"></path><path d="M6 18a4 4 0 0 1-1.967-.516"></path><path d="M19.967 17.484A4 4 0 0 1 18 18"></path></svg>
                         </div>
                         <h3 class="text-xl font-semibold mb-3">AI Analysis</h3>
                         <p class="text-decisioner-gray">Advanced algorithms that analyze complex data to extract meaningful insights.</p>
@@ -32,10 +28,7 @@
 
                     <div class="flex flex-col items-center text-center p-6 hover:bg-decisioner-light-gray/30 rounded-xl transition-colors">
                         <div class="w-16 h-16 bg-decisioner-light-orange rounded-full flex items-center justify-center mb-4">
-                            <!-- LineChart SVG Icon -->
-                            <svg class="w-8 h-8 text-decisioner-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path d="M4 20l4-4 3 3 5-5 4 4"></path>
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-line h-8 w-8 text-decisioner-orange"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
                         </div>
                         <h3 class="text-xl font-semibold mb-3">Data Visualization</h3>
                         <p class="text-decisioner-gray">Interactive charts and graphs that make complex data easy to understand.</p>
@@ -43,10 +36,7 @@
 
                     <div class="flex flex-col items-center text-center p-6 hover:bg-decisioner-light-gray/30 rounded-xl transition-colors">
                         <div class="w-16 h-16 bg-decisioner-light-orange rounded-full flex items-center justify-center mb-4">
-                            <!-- LineChart SVG Icon -->
-                            <svg class="w-8 h-8 text-decisioner-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path d="M4 20l4-4 3 3 5-5 4 4"></path>
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb h-8 w-8 text-decisioner-orange"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>
                         </div>
                         <h3 class="text-xl font-semibold mb-3">Smart Recommendations</h3>
                         <p class="text-decisioner-gray">Actionable recommendations that help you make better decisions.</p>
@@ -75,8 +65,8 @@
                                     @endforeach
                                 </ul>
                             </div>
-                            <div class="lg:w-1/2 bg-gray-200 rounded-xl p-8 h-72 flex items-center justify-center">
-                                <span class="text-4xl font-bold text-gray-600 opacity-70">{{ $section['title'] }}</span>
+                            <div class="lg:w-1/2 bg-decisioner-light-orange/70 rounded-xl p-8 h-72 flex items-center justify-center">
+                                <span class="text-4xl font-bold text-decisioner-orange opacity-70">{{ $section['title'] }}</span>
                             </div>
                         </div>
                     </div>

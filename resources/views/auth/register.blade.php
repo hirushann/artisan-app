@@ -67,7 +67,7 @@
 
 
 <x-guest-layout>
-    <div class="min-h-screen flex flex-col bg-gradient-to-br from-white to-decisioner-light-orange/20">
+    <div class="flex flex-col bg-gradient-to-br from-white to-decisioner-light-orange/20">
         <!-- Main Content -->
         <div class="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8">
             <div class="w-full max-w-md space-y-8">
