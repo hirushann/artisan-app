@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('other_purpose')->nullable();
             $table->json('options');
             $table->string('report_type');
+            $table->longText('ai_response')->nullable();
             $table->timestamps();
         });
     }

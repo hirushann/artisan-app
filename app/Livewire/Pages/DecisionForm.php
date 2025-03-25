@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Pages;
 
 use App\Models\Decision;
 use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Prism\Prism\Prism;
 
 class DecisionForm extends Component
 {
@@ -24,6 +25,8 @@ class DecisionForm extends Component
     #[Validate('required')]
     public $reportType = '';
 
+    public $aiResponse = '';
+
     function saveForm() : void {
         // $this->validate();
 
@@ -34,11 +37,16 @@ class DecisionForm extends Component
             'options' => json_encode($this->options),
             'report_type' => $this->reportType]
         );
-        Log::info($this->options);
+
+        // $aiResponse = Prism::stream()
+        //     ->using('openai', 'gpt-4o-mini')
+        //     ->withPrompt('Tell me a story about a brave knight.')
+        //     ->generate();
+        // Log::info($this->options);
     }
     
     public function render()
     {
-        return view('livewire.decision-form');
+        return view('livewire.pages.decision-form');
     }
 }

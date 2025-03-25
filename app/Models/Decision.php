@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Decision extends Model
 {
-    protected $fillable = ['main_purpose', 'sub_purpose', 'other_purpose', 'options', 'report_type'];
+    protected $fillable = ['main_purpose', 'sub_purpose', 'other_purpose', 'options', 'report_type', 'ai_response'];
 }

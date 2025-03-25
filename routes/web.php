@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Pages\About;
+use App\Livewire\Pages\DecisionResponse;
 use App\Livewire\Pages\Features;
 use App\Livewire\Pages\Pricing;
 
@@ -17,6 +18,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/decision/{decision_id}', DecisionResponse::class)->name('decision-response');
 });
 
 Route::get('/about', About::class)->name('about');
