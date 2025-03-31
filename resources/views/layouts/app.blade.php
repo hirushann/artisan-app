@@ -27,10 +27,6 @@
 <body class="font-sans antialiased bg-white">
     <x-banner />
     <div class="min-h-screen bg-white dark:bg-gray-900">
-
-
-        <!-- Page Content -->
-        {{-- <main> --}}
             <div class="flex gap-0">
                 <div class="w-[15%]">
                     <livewire:layouts.side-bar />
@@ -40,7 +36,7 @@
                 <div class="overflow-auto w-[85%] mx-auto dark:bg-gray-800">
                     @livewire('navigation-menu')
         
-                    <div class="p-4 h-full bg-white dark:bg-gray-700 dark:rounded-3xl">
+                    <div class="p-4 h-full bg-white dark:bg-gray-700">
                         <div class="p-4">
                             <div class="grid grid-cols-1 gap-4 mb-4">
                                 {{ $slot }}
