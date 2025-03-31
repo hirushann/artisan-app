@@ -13,7 +13,7 @@ Route::get('/dashboard', function () {
     if (Auth::check()) {
         return redirect()->route('home');
     }
-    return redirect()->route('new-decisions');
+    return redirect()->route('new-decision');
 })->name('dashboard');
 
 Route::get('/', function () {
