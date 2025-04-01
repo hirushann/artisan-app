@@ -31,6 +31,9 @@ Route::middleware([
     Volt::route('/my-decisions', 'pages.my-decision')
         ->name('my-decision');
 
+    Volt::route('/single-decisions', 'pages.show-single-decision')
+        ->name('single-decision');
+
     Volt::route('/home', 'pages.home')
         ->name('home');
 });
