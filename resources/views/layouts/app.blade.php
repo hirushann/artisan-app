@@ -24,8 +24,8 @@
     @fluxAppearance
 </head>
 
+<x-banner />
 <body class="font-sans antialiased bg-white">
-    <x-banner />
     <div class="min-h-screen bg-white dark:bg-gray-900">
         <div class="flex gap-0">
             <div class="w-[15%]">
