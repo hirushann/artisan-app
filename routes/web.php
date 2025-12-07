@@ -23,23 +23,28 @@ Route::get('/', function () {
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified',
 ])->group(function () {
 
-    Route::get('/decision/{decision_id}', DecisionResponse::class)->name('decision-response');
+    // Route::get('/decision/{decision_id}', DecisionResponse::class)->name('decision-response');
+    
+    Volt::route('/decision/{decision}', 'pages.show-single-decision')
+        ->name('decision.show');
 
     Volt::route('/my-decisions', 'pages.my-decision')
         ->name('my-decision');
 
-    Volt::route('/single-decisions', 'pages.show-single-decision')
-        ->name('single-decision');
+    // Volt::route('/single-decisions', 'pages.show-single-decision')
+    //     ->name('single-decision');
 
     Volt::route('/home', 'pages.home')
         ->name('home');
-});
 
-Volt::route('/new-decisions', 'pages.new-decision')
-    ->name('new-decision');
+    Volt::route('/new-decisions', 'pages.new-decision')
+        ->name('new-decision');
+
+    Route::get('/decision/{decision}/pdf', [App\Http\Controllers\DecisionController::class, 'downloadPdf'])
+        ->name('decision.pdf');
+});
 
 Route::get('/about', About::class)->name('about');
 Route::get('/features', Features::class)->name('features');

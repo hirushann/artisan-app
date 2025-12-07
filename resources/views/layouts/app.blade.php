@@ -26,21 +26,19 @@
 
 <x-banner />
 <body class="font-sans antialiased bg-white">
-    <div class="min-h-screen bg-white dark:bg-gray-900">
-        <div class="flex gap-0">
-            <div class="w-[15%]">
-                <livewire:layouts.side-bar />
-            </div>
+    <div class="flex h-screen overflow-hidden bg-white dark:bg-gray-900">
+        <div class="w-[15%] flex-shrink-0 border-r border-gray-100 dark:border-gray-700">
+            <livewire:layouts.side-bar />
+        </div>
 
-            <!-- Page Content -->
-            <div class="overflow-auto w-[85%] mx-auto dark:bg-gray-800">
-                @livewire('navigation-menu')
-    
-                <div class="p-4 h-full bg-white dark:bg-gray-700">
-                    <div class="p-4">
-                        <div class="grid grid-cols-1 gap-4 mb-4">
-                            {{ $slot }}
-                        </div>
+        <!-- Page Content -->
+        <div class="flex-1 flex flex-col w-[85%] mx-auto dark:bg-gray-800">
+            @livewire('navigation-menu')
+
+            <div class="flex-1 overflow-auto p-4 h-full bg-white dark:bg-gray-700">
+                <div class="p-4">
+                    <div class="grid grid-cols-1 gap-4 mb-4">
+                        {{ $slot }}
                     </div>
                 </div>
             </div>
@@ -55,52 +53,53 @@
     {{-- <script src="//unpkg.com/alpinejs" defer></script> --}}
 
     <script>
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-    } else {
-        document.documentElement.classList.remove('dark')
-    }
+    <script>
+        // Force light theme
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
-// Change the icons inside the button based on previous settings
-if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    themeToggleLightIcon.classList.remove('hidden');
-} else {
-    themeToggleDarkIcon.classList.remove('hidden');
-}
+        // Wait for DOM to load icons if script runs too early (though at bottom body it should be fine)
+        document.addEventListener('DOMContentLoaded', function() {
+            var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+            var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+            var themeToggleBtn = document.getElementById('theme-toggle');
 
-var themeToggleBtn = document.getElementById('theme-toggle');
+            if (!themeToggleBtn) return;
 
-themeToggleBtn.addEventListener('click', function() {
+            // Change the icons inside the button
+            themeToggleLightIcon.classList.add('hidden');
+            themeToggleDarkIcon.classList.remove('hidden');
 
-    // toggle icons inside button
-    themeToggleDarkIcon.classList.toggle('hidden');
-    themeToggleLightIcon.classList.toggle('hidden');
+            themeToggleBtn.addEventListener('click', function() {
+                // toggle icons inside button
+                themeToggleDarkIcon.classList.toggle('hidden');
+                themeToggleLightIcon.classList.toggle('hidden');
 
-    // if set via local storage previously
-    if (localStorage.getItem('color-theme')) {
-        if (localStorage.getItem('color-theme') === 'light') {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('color-theme', 'dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('color-theme', 'light');
-        }
-
-    // if NOT set via local storage previously
-    } else {
-        if (document.documentElement.classList.contains('dark')) {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('color-theme', 'light');
-        } else {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('color-theme', 'dark');
-        }
-    }
-
-});
+                // if set via local storage previously
+                if (localStorage.getItem('color-theme')) {
+                    if (localStorage.getItem('color-theme') === 'light') {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('color-theme', 'dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('color-theme', 'light');
+                    }
+                // if NOT set via local storage previously
+                } else {
+                    if (document.documentElement.classList.contains('dark')) {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('color-theme', 'light');
+                    } else {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('color-theme', 'dark');
+                    }
+                }
+            });
+        });
     </script>
 </body>
 
