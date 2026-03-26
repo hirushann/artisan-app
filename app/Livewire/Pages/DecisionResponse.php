@@ -29,8 +29,8 @@ class DecisionResponse extends Component
     function aiDecisionResponse(): void
     {
         // if(empty($this->decision_model) || empty($this->decision_model->ai_response)){
-            $this->aiDecision = Prism::stream()
-                ->using('openai', 'gpt-4o-mini')
+            $this->aiDecision = Prism::text()
+                ->using('gemini', 'gemini-flash-latest')
                 ->withPrompt('Tell me a story about a brave knight.')
                 ->generate();
             // Log::info(json_encode($this->aiDecision));
